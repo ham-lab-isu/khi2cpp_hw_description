@@ -1,18 +1,32 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
 
+  <!-- inertial macro - assign intertial properties to links-->
+  <xacro:macro name="default_inertial" params="mass">
+    <inertial>
+      <mass value="${mass}" />
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1" />
+    </inertial>
+  </xacro:macro>
+
   <xacro:macro name="create_link" params="
         link_name
         xyz_offset
         rpy_offset
         mesh_package
-        mesh_name">
+        mesh_name
+        link_mass
+        ">
     <link name="${link_name}">
       <visual>
         <origin xyz="${xyz_offset}" rpy="${rpy_offset}"/>
         <geometry>
           <mesh filename="package://${mesh_package}/meshes/visual/${mesh_name}.dae"/>
         </geometry>
+        <material
+          name="">
+          <color rgba="0.75294 0.75294 0.75294 1" />
+        </material>
       </visual>
       <collision>
         <origin xyz="${xyz_offset}" rpy="${rpy_offset}"/>
@@ -20,10 +34,7 @@
           <mesh filename="package://${mesh_package}/meshes/collision/${mesh_name}.stl"/>
         </geometry>
       </collision>
-      <inertial>
-        <mass value="1"/>
-        <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
-      </inertial>
+      <xacro:default_inertial mass="${link_mass}"/>
     </link>
   </xacro:macro>
 </robot>
