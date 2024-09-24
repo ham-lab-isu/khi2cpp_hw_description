@@ -15,12 +15,12 @@
   <xacro:property name="pushcorp_mass" value="30"/>
 
   <!-- joint limits [rad] -->
-  <xacro:property name="j1_lower_limit" value="${radians(-160)}"/>
-  <xacro:property name="j1_upper_limit" value="${radians( 160)}"/>
-  <xacro:property name="j2_lower_limit" value="${radians(-60)}"/>
-  <xacro:property name="j2_upper_limit" value="${radians( 80)}"/>
-  <xacro:property name="j3_lower_limit" value="${radians(-75)}"/>
-  <xacro:property name="j3_upper_limit" value="${radians( 95)}"/>
+  <xacro:property name="j1_lower_limit" value="${radians( 0 )}"/>
+  <xacro:property name="j1_upper_limit" value="${radians( 90 )}"/>
+  <xacro:property name="j2_lower_limit" value="${radians(-80 )}"/>
+  <xacro:property name="j2_upper_limit" value="${radians( 36 )}"/>
+  <xacro:property name="j3_lower_limit" value="${radians(-75 )}"/>
+  <xacro:property name="j3_upper_limit" value="${radians( 0 )}"/>
   <xacro:property name="j4_lower_limit" value="${radians(-210)}"/>
   <xacro:property name="j4_upper_limit" value="${radians( 210)}"/>
   <xacro:property name="j5_lower_limit" value="${radians(-120)}"/>
@@ -104,6 +104,7 @@
       link_mass = "${j6_mass}"
   />
 
+<!--
   <xacro:create_link
       link_name="pushcorp"
       xyz_offset="0 0 0"
@@ -112,14 +113,14 @@
       mesh_name="cx165l-pushcorp"
       link_mass = "${pushcorp_mass}"
   />
-
+-->
   <link name="tool0"/>
 
   <!-- base_joint fixes base_link to the environment -->
   <joint name="base_joint" type="fixed">
     <parent link="world"/>
     <child link="base_link"/>
-    <origin xyz="0 0 0.0254" rpy="0 0 0"/>
+    <origin xyz="-5.0546 0 0.0254" rpy="0 0 0"/>
     <axis xyz="0 0 -1"/>
   </joint>
 
@@ -171,17 +172,17 @@
     <axis xyz="0 1 0"/>
     <limit effort="1000.0" lower="${j6_lower_limit}" upper="${j6_upper_limit}" velocity="${j6_velocity_limit}"/>
   </joint>
-
+<!--
   <joint name="pushcorp" type="fixed">
     <parent link="link_6"/>
     <child link="pushcorp"/>
       <origin xyz="0 0.0949325000000025 0" rpy="0 1.5707963267949 0" />
   </joint>
-
+-->
   <joint name="joint-tool" type="fixed">
-    <parent link="pushcorp"/>
+    <parent link="link_6"/>
     <child link="tool0"/>
-    <origin xyz="0 0 .185" rpy="0 0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
 
 </xacro:macro>

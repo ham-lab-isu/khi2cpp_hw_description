@@ -49,7 +49,7 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
-      Value: false
+      Value: true
     - Class: rviz_default_plugins/TF
       Enabled: true
       Frame Timeout: 15
@@ -57,7 +57,13 @@ Visualization Manager:
         All Enabled: true
         base_link:
           Value: true
-        ft_frame:
+        base_plate_cx110l:
+          Value: true
+        base_plate_cx165l:
+          Value: true
+        east_wall:
+          Value: true
+        floor:
           Value: true
         link_1:
           Value: true
@@ -71,7 +77,13 @@ Visualization Manager:
           Value: true
         link_6:
           Value: true
+        north_wall:
+          Value: true
+        south_wall:
+          Value: true
         tool0:
+          Value: true
+        west_wall:
           Value: true
         world:
           Value: true
@@ -89,9 +101,22 @@ Visualization Manager:
                   link_4:
                     link_5:
                       link_6:
-                        ft_frame:
-                          tool0:
-                            {}
+                        tool0:
+                          {}
+          base_plate_cx110l:
+            {}
+          base_plate_cx165l:
+            {}
+          east_wall:
+            {}
+          floor:
+            {}
+          north_wall:
+            {}
+          south_wall:
+            {}
+          west_wall:
+            {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -117,10 +142,26 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        ft_frame:
+        base_plate_cx110l:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
+        base_plate_cx165l:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        east_wall:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        floor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         link_1:
           Alpha: 1
           Show Axes: false
@@ -151,10 +192,25 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        north_wall:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        south_wall:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         tool0:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        west_wall:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         world:
           Alpha: 1
           Show Axes: false
@@ -213,25 +269,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 6.
+      Distance: 6.587448596954346
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.3431778848171234
-        Y: 0.6169372200965881
-        Z: 0.4080313444137573
+        X: 0.7450618743896484
+        Y: 0.7700088620185852
+        Z: 1.1880176067352295
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5
+      Pitch: 0.5349999666213989
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.4
+      Yaw: 2.224997043609619
     Saved: ~
 Window Geometry:
   Displays:
