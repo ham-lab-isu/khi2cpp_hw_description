@@ -36,82 +36,165 @@
   <xacro:property name="j5_velocity_limit" value="${radians(180)}"/>
   <xacro:property name="j6_velocity_limit" value="${radians(280)}"/>
 
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://khi2cpp_hw_description/cx165l/meshes/visual/cx165l-base.dae"/>
+      </geometry>
+      <material
+        name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://khi2cpp_hw_description/cx165l/meshes/collision/cx165l-base.stl"/>
+      </geometry>
+    </collision>
+    <xacro:default_inertial mass="${j0_mass}"/>
+  </link>
 
-  <!-- helper macro -->
-  <xacro:include filename="$(find khi2cpp_hw_description)/cx165l/urdf/inc/create_link.xacro"/>
+  <link name="link_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://khi2cpp_hw_description/cx165l/meshes/visual/cx165l-j1.dae"/>
+      </geometry>
+      <material
+        name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://khi2cpp_hw_description/cx165l/meshes/collision/cx165l-j1.stl"/>
+      </geometry>
+    </collision>
+    <xacro:default_inertial mass="${j1_mass}"/>
+  </link>
 
+  <link name="link_2">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://khi2cpp_hw_description/cx165l/meshes/visual/cx165l-j2.dae"/>
+      </geometry>
+      <material
+        name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://khi2cpp_hw_description/cx165l/meshes/collision/cx165l-j2.stl"/>
+      </geometry>
+    </collision>
+    <xacro:default_inertial mass="${j2_mass}"/>
+  </link>
 
-  <xacro:create_link
-      link_name="base_link"
-      xyz_offset="0 0 0"
-      rpy_offset="0 0 0"
-      mesh_package="khi2cpp_hw_description/cx165l"
-      mesh_name="cx165l-base"
-      link_mass = "${j0_mass}"
-  />
+  <link name="link_3">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://khi2cpp_hw_description/cx165l/meshes/visual/cx165l-j3.dae"/>
+      </geometry>
+      <material
+        name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://khi2cpp_hw_description/cx165l/meshes/collision/cx165l-j3.stl"/>
+      </geometry>
+    </collision>
+    <xacro:default_inertial mass="${j3_mass}"/>
+  </link>
 
-  <xacro:create_link
-      link_name="link_1"
-      xyz_offset="0 0 0"
-      rpy_offset="0 0 0"
-      mesh_package="khi2cpp_hw_description/cx165l"
-      mesh_name="cx165l-j1"
-      link_mass = "${j1_mass}"
-  />
+  <link name="link_4">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://khi2cpp_hw_description/cx165l/meshes/visual/cx165l-j4.dae"/>
+      </geometry>
+      <material
+        name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://khi2cpp_hw_description/cx165l/meshes/collision/cx165l-j4.stl"/>
+      </geometry>
+    </collision>
+    <xacro:default_inertial mass="${j4_mass}"/>
+  </link>
 
-  <xacro:create_link
-      link_name="link_2"
-      xyz_offset="0 0 0"
-      rpy_offset="0 0 0"
-      mesh_package="khi2cpp_hw_description/cx165l"
-      mesh_name="cx165l-j2"
-      link_mass = "${j2_mass}"
-  />
+  <link name="link_5">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://khi2cpp_hw_description/cx165l/meshes/visual/cx165l-j5.dae"/>
+      </geometry>
+      <material
+        name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://khi2cpp_hw_description/cx165l/meshes/collision/cx165l-j5.stl"/>
+      </geometry>
+    </collision>
+    <xacro:default_inertial mass="${j5_mass}"/>
+  </link>
 
-  <xacro:create_link
-      link_name="link_3"
-      xyz_offset="0 0 0"
-      rpy_offset="0 0 0"
-      mesh_package="khi2cpp_hw_description/cx165l"
-      mesh_name="cx165l-j3"
-      link_mass = "${j3_mass}"
-  />
-
-  <xacro:create_link
-      link_name="link_4"
-      xyz_offset="0 0 0"
-      rpy_offset="0 0 0"
-      mesh_package="khi2cpp_hw_description/cx165l"
-      mesh_name="cx165l-j4"
-      link_mass = "${j4_mass}"
-  />
-
-  <xacro:create_link
-      link_name="link_5"
-      xyz_offset="0 0 0"
-      rpy_offset="0 0 0"
-      mesh_package="khi2cpp_hw_description/cx165l"
-      mesh_name="cx165l-j5"
-      link_mass = "${j5_mass}"
-  />
-
-  <xacro:create_link
-      link_name="link_6"
-      xyz_offset="0 0 0"
-      rpy_offset="0 0 0"
-      mesh_package="khi2cpp_hw_description/cx165l"
-      mesh_name="cx165l-j6"
-      link_mass = "${j6_mass}"
-  />
-
-  <xacro:create_link
-      link_name="pushcorp"
-      xyz_offset="0 0 0"
-      rpy_offset="0 0 0"
-      mesh_package="khi2cpp_hw_description/cx165l"
-      mesh_name="cx165l-pushcorp"
-      link_mass = "${pushcorp_mass}"
-  />
+  <link name="link_6">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://khi2cpp_hw_description/cx165l/meshes/visual/cx165l-j6.dae"/>
+      </geometry>
+      <material
+        name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://khi2cpp_hw_description/cx165l/meshes/collision/cx165l-j6.stl"/>
+      </geometry>
+    </collision>
+    <xacro:default_inertial mass="${j6_mass}"/>
+  </link>
+  
+  <link name="pushcorp">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://khi2cpp_hw_description/cx165l/meshes/visual/cx165l-pushcorp.dae"/>
+      </geometry>
+      <material
+        name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://khi2cpp_hw_description/cx165l/meshes/collision/cx165l-pushcorp.stl"/>
+      </geometry>
+    </collision>
+    <xacro:default_inertial mass="${pushcorp_mass}"/>
+  </link>
 
   <link name="tool0"/>
 
