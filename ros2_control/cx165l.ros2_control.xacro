@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="cx165l_ros2_control" params="name">
+  <xacro:macro name="CX165L-BC01" params="name">
 
     <ros2_control name="${name}" type="system">
 
