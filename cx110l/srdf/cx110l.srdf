@@ -13,7 +13,7 @@
     <joint name="joint_6" value="0"/>
   </group_state>
   <!--DISABLE COLLISIONS - By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
-  <disable_collisions link1="base_link" link2="base_plate_cx110l" reason="Adjacent"/>
+  <disable_collisions link1="base_link" link2="base_plate_cx110l" reason="Never"/>
   <disable_collisions link1="base_link" link2="east_wall" reason="Never"/>
   <disable_collisions link1="base_link" link2="floor" reason="Default"/>
   <disable_collisions link1="base_link" link2="link_1" reason="Adjacent"/>

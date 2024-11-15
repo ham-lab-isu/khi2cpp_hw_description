@@ -15,8 +15,8 @@
   <xacro:property name="pushcorp_mass" value="30"/>
 
   <!-- joint limits [rad] -->
-  <xacro:property name="j1_lower_limit" value="${radians(-160)}"/>
-  <xacro:property name="j1_upper_limit" value="${radians( 160)}"/>
+  <xacro:property name="j1_lower_limit" value="${radians(-90)}"/>
+  <xacro:property name="j1_upper_limit" value="${radians( 0)}"/>
   <xacro:property name="j2_lower_limit" value="${radians(-60)}"/>
   <xacro:property name="j2_upper_limit" value="${radians( 80)}"/>
   <xacro:property name="j3_lower_limit" value="${radians(-75)}"/>
