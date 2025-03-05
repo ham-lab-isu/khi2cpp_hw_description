@@ -6,15 +6,20 @@
     <ros2_control name="${name}" type="system">
 
       <hardware>
+        <xacro:if value="${sim}">
+          <plugin>mock_components/GenericSystem</plugin>
+        </xacro:if>
+        <xacro:unless value="${sim}">
         <plugin>khi2cpp_hw/KhiSystem</plugin>
         <param name="ip_address_0">192</param>
         <param name="ip_address_1">168</param>
         <param name="ip_address_2">0</param>
         <param name="ip_address_3">23</param>
         <param name="period">2</param>
+        </xacro:unless>
       </hardware>
 
-      <joint name="joint_1">
+      <joint name="${prefix}joint1">
         <command_interface name="position">
           <param name="min">${radians(-160)}</param>
           <param name="max">${radians(160)}</param>
@@ -23,13 +28,13 @@
           <param name="min">${radians(-130)}</param>
           <param name="max">${radians(130)}</param>
         </command_interface>
-        <state_interface name="position">
-          <param name="initial_value">0.0</param>
-        </state_interface>
+        <!-- <command_interface name="acceleration"/> -->
+        <state_interface name="position"/>
         <state_interface name="velocity"/>
+        <param name="initial_position">0.0</param>
+        <param name="initial_velocity">0.0</param>
       </joint>
-
-      <joint name="joint_2">
+      <joint name="${prefix}joint2">
         <command_interface name="position">
           <param name="min">${radians(-60)}</param>
           <param name="max">${radians(80)}</param>
@@ -38,13 +43,13 @@
           <param name="min">${radians(-125)}</param>
           <param name="max">${radians(125)}</param>
         </command_interface>
-        <state_interface name="position">
-          <param name="initial_value">0.0</param>
-        </state_interface>
+        <!-- <command_interface name="acceleration"/> -->
+        <state_interface name="position"/>
         <state_interface name="velocity"/>
+        <param name="initial_position">0.0</param>
+        <param name="initial_velocity">0.0</param>
       </joint>
-
-      <joint name="joint_3">
+      <joint name="${prefix}joint3">
         <command_interface name="position">
           <param name="min">${radians(-75)}</param>
           <param name="max">${radians(95)}</param>
@@ -53,13 +58,13 @@
           <param name="min">${radians(-125)}</param>
           <param name="max">${radians(125)}</param>
         </command_interface>
-        <state_interface name="position">
-          <param name="initial_value">0.0</param>
-        </state_interface>
+        <!-- <command_interface name="acceleration"/> -->
+        <state_interface name="position"/>
         <state_interface name="velocity"/>
+        <param name="initial_position">${0.0}</param>
+        <param name="initial_velocity">0.0</param>
       </joint>
-
-      <joint name="joint_4">
+      <joint name="${prefix}joint4">
         <command_interface name="position">
           <param name="min">${radians(-210)}</param>
           <param name="max">${radians(210)}</param>
@@ -68,13 +73,13 @@
           <param name="min">${radians(-180)}</param>
           <param name="max">${radians(180)}</param>
         </command_interface>
-        <state_interface name="position">
-          <param name="initial_value">0.0</param>
-        </state_interface>
+        <!-- <command_interface name="acceleration"/> -->
+        <state_interface name="position"/>
         <state_interface name="velocity"/>
+        <param name="initial_position">0.0</param>
+        <param name="initial_velocity">0.0</param>
       </joint>
-
-      <joint name="joint_5">
+      <joint name="${prefix}joint5">
         <command_interface name="position">
           <param name="min">${radians(-120)}</param>
           <param name="max">${radians(120)}</param>
@@ -83,13 +88,13 @@
           <param name="min">${radians(-180)}</param>
           <param name="max">${radians(180)}</param>
         </command_interface>
-        <state_interface name="position">
-          <param name="initial_value">0.0</param>
-        </state_interface>
+        <!-- <command_interface name="acceleration"/> -->
+        <state_interface name="position"/>
         <state_interface name="velocity"/>
+        <param name="initial_position">0.0</param>
+        <param name="initial_velocity">0.0</param>
       </joint>
-
-      <joint name="joint_6">
+      <joint name="${prefix}joint6">
         <command_interface name="position">
           <param name="min">${radians(-360)}</param>
           <param name="max">${radians(360)}</param>
@@ -98,10 +103,11 @@
           <param name="min">${radians(-280)}</param>
           <param name="max">${radians(280)}</param>
         </command_interface>
-        <state_interface name="position">
-          <param name="initial_value">0.0</param>
-        </state_interface>
+        <!-- <command_interface name="acceleration"/> -->
+        <state_interface name="position"/>
         <state_interface name="velocity"/>
+        <param name="initial_position">1.571</param>
+        <param name="initial_velocity">0.0</param>
       </joint>
 
     </ros2_control>

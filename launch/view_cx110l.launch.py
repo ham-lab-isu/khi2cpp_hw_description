@@ -31,6 +31,13 @@ def generate_launch_description():
         with this launch file.",
         )
     )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "sim_robot",
+            default_value="True",
+            description="Start the simulation with simulated robot.",
+        )
+    )
     # Initialize Arguments
     gui = LaunchConfiguration("gui")
 
@@ -43,12 +50,14 @@ def generate_launch_description():
                 [
                     FindPackageShare("khi2cpp_hw_description"),
                     "cx110l/urdf",
-                    "cx110l.urdf.xacro",
+                    "workcell.xacro",
                 ]
             ),
         ]
     )
+
     robot_description = {"robot_description": robot_description_content}
+    sim_robot = LaunchConfiguration("sim_robot")
 
     rviz_config_file = PathJoinSubstitution(
         [FindPackageShare("khi2cpp_hw_description"), "cx110l/rviz", "view_robot.rviz"]
@@ -64,7 +73,7 @@ def generate_launch_description():
         package="robot_state_publisher",
         executable="robot_state_publisher",
         output="both",
-        parameters=[robot_description],
+        parameters=[robot_description, sim_robot],
     )
     
     rviz_node = Node(

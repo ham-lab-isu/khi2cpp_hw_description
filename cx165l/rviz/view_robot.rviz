@@ -59,17 +59,17 @@ Visualization Manager:
           Value: true
         ft_frame:
           Value: true
-        link_1:
+        link1:
           Value: true
-        link_2:
+        link2:
           Value: true
-        link_3:
+        link3:
           Value: true
-        link_4:
+        link4:
           Value: true
-        link_5:
+        link5:
           Value: true
-        link_6:
+        link6:
           Value: true
         tool0:
           Value: true
@@ -83,12 +83,12 @@ Visualization Manager:
       Tree:
         world:
           base_link:
-            link_1:
-              link_2:
-                link_3:
-                  link_4:
-                    link_5:
-                      link_6:
+            link1:
+              link2:
+                link3:
+                  link4:
+                    link5:
+                      link6:
                         ft_frame:
                           tool0:
                             {}
@@ -121,32 +121,32 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        link_1:
+        link1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        link_2:
+        link2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        link_3:
+        link3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        link_4:
+        link4:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        link_5:
+        link5:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        link_6:
+        link6:
           Alpha: 1
           Show Axes: false
           Show Trail: false

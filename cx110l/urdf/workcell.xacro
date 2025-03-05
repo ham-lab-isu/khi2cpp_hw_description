@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot name="khi_cx110l" xmlns:xacro="http://wiki.ros.org/xacro">
+  
+  <xacro:arg name="prefix" default="" />
+
+  <!-- Import Lab Robot Cell -->
+  <xacro:include filename="$(find khi2cpp_hw_description)/common/isu_lab.xacro" />
+
+  <!-- Import cx110l macro -->
+  <xacro:include filename="$(find khi2cpp_hw_description)/cx110l/urdf/cx110l_macro.xacro"/>
+  <xacro:khi_cx110l prefix="" />
+
+  <xacro:arg name="sim" default="false"/>
+    <!-- Import cx110l ros2_control description -->
+  <xacro:include filename="$(find khi2cpp_hw_description)/ros2_control/cx110l.ros2_control.xacro" />
+  <xacro:cx110l_ros2_control name="CX110L-BC01" prefix="" sim="$(arg sim)"/>
+
+ 
+
+</robot>
