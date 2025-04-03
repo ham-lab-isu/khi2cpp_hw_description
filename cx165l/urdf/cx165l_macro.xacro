@@ -47,6 +47,16 @@
   <xacro:property name="j5_velocity_limit" value="${radians(180)}"/>
   <xacro:property name="j6_velocity_limit" value="${radians(280)}"/>
 
+  <!-- link inertial(TODO : set correct link inertial )-->
+  <xacro:macro name="default_inertial" params="mass">
+    <inertial>
+      <mass value="${mass}" />
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1" />
+    </inertial>
+  </xacro:macro>
+
+  <link name="world"/>
+
   <link name="${prefix}base_link">
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -221,8 +231,8 @@
   <joint name="${prefix}joint1" type="revolute">
     <parent link="${prefix}base_link"/>
     <child link="${prefix}link1"/>
-    <origin xyz="0 0 0.55" rpy="0 0 0"/>
-    <axis xyz="0 0 -1"/>
+    <origin xyz="0 0 0.55" rpy="0 0 0" />
+    <axis xyz="0 0 -1" rpy="0 0 0" />
     <limit effort="1000.0" lower="${j1_lower_limit}" upper="${j1_upper_limit}" velocity="${j1_velocity_limit}"/>
   </joint>
 
@@ -230,7 +240,7 @@
     <parent link="${prefix}link1"/>
     <child link="${prefix}link2"/>
     <origin xyz="0 0.3 0" rpy="0 0 0"/>
-    <axis xyz="1 0 0"/>
+    <axis xyz="0 1 0" rpy="0 0 0" />
     <limit effort="1000.0" lower="${j2_lower_limit}" upper="${j2_upper_limit}" velocity="${j2_velocity_limit}"/>
   </joint>
 
@@ -238,7 +248,7 @@
     <parent link="${prefix}link2"/>
     <child link="${prefix}link3"/>
     <origin xyz="0 0 1.19" rpy="0 0 0" />
-    <axis xyz="1 0 0"/>
+    <axis xyz="0 -1 0" rpy="0 0 0" />
     <limit effort="1000.0" lower="${j3_lower_limit}" upper="${j3_upper_limit}" velocity="${j3_velocity_limit}"/>
   </joint>
 
@@ -253,8 +263,8 @@
   <joint name="${prefix}joint5" type="revolute">
     <parent link="${prefix}link4"/>
     <child link="${prefix}link5"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="0 -1 0" rpy="0 0 0" />
     <limit effort="1000.0" lower="${j5_lower_limit}" upper="${j5_upper_limit}" velocity="${j5_velocity_limit}"/>
   </joint>
 
@@ -269,13 +279,13 @@
   <joint name="${prefix}pushcorp" type="fixed">
     <parent link="${prefix}link6"/>
     <child link="${prefix}pushcorp"/>
-      <origin xyz="0 0.0949325000000025 0" rpy="0 1.5707963267949 0" />
+      <origin xyz="0 0.0949325000000025 0" rpy="0 0 0" />
   </joint>
 
   <joint name="${prefix}joint-tool" type="fixed">
     <parent link="${prefix}pushcorp"/>
     <child link="tool0"/>
-    <origin xyz="0 0 .185" rpy="0 0 0"/>
+    <origin xyz="0.3567 0.15 0" rpy="0 0 0"/>
   </joint>
 
 </xacro:macro>

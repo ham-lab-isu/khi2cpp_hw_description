@@ -1,7 +1,7 @@
 kinematic_plugins:
   search_libraries: []
   inv_kin_plugins:
-    cx165l_manipulator:
+    cx110l_manipulator:
       default: OPW
       plugins:
         OPW:

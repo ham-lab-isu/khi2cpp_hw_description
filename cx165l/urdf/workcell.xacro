@@ -3,20 +3,17 @@
 
   <!-- <xacro:property name="robot_name" value="cx165l"/>
   <xacro:property name="krnx_name" value="CX165L-BC01"/> -->
-  <xacro:khi_cx165l prefix="" />
-
-  <!-- Import cx165l macro -->
-  <xacro:include filename="$(find khi2cpp_hw_description)/cx165l/urdf/cx165l_macro.xacro"/>
-
-  <!-- create link fixed to the "world" -->
-  <link name="world"/>
+  <xacro:arg name="prefix" default=""/> 
 
   <!-- Import Lab Robot Cell -->
   <xacro:include filename="$(find khi2cpp_hw_description)/common/isu_lab.xacro" />
 
-  <xacro:cx165l_description/>
+  <!-- Import cx165l macro -->
+  <xacro:include filename="$(find khi2cpp_hw_description)/cx165l/urdf/cx165l_macro.xacro"/>
+  <xacro:khi_cx165l prefix="" />
 
-  <!-- Import cx110l ros2_control description -->
+  <xacro:arg name="sim" default="false"/>
+  <!-- Import cx165l ros2_control description -->
   <xacro:include filename="$(find khi2cpp_hw_description)/ros2_control/cx165l.ros2_control.xacro" />
   <xacro:cx165l_ros2_control name="CX165L-BC01" prefix="" sim="$(arg sim)"/>
 
